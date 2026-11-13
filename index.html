@@ -1,0 +1,438 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Petualangan Barisan dan Deret</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f0f4ff;
+  color: #263354;
+}
+
+header {
+  background: linear-gradient(135deg,#6558e8,#20b9c9);
+  color: white;
+  text-align: center;
+  padding: 35px 15px;
+}
+
+header h1 {
+  font-size: 30px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 15px;
+  background: white;
+}
+
+nav button, .btn {
+  border: none;
+  background: #6558e8;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+nav button:hover, .btn:hover {
+  background: #4034bd;
+}
+
+.container {
+  max-width: 900px;
+  margin: 25px auto;
+  padding: 15px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  margin-bottom: 20px;
+  border-radius: 18px;
+  box-shadow: 0 5px 15px #ccd2e5;
+}
+
+h2 {
+  color: #6558e8;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+.highlight {
+  background: #e8f7ff;
+  padding: 15px;
+  border-left: 5px solid #20b9c9;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+input {
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  width: 100%;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.option {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  margin: 9px 0;
+  background: #eef0ff;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+  font-size: 16px;
+}
+
+.option:hover {
+  border-color: #6558e8;
+}
+
+#feedback {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #263354;
+  color: white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🚀 PETUALANGAN MATEMATIKA</h1>
+  <h2 style="color:white">BARISAN DAN DERET</h2>
+  <p>Belajar Matematika Jadi Seru dan Menyenangkan!</p>
+</header>
+
+<nav>
+  <button onclick="showPage('home')">🏠 Beranda</button>
+  <button onclick="showPage('materi')">📚 Materi</button>
+  <button onclick="showPage('game')">🎮 Game</button>
+  <button onclick="showPage('kuis')">📝 Kuis</button>
+</nav>
+
+<div class="container">
+
+<!-- BERANDA -->
+<section id="home" class="page active">
+  <div class="card" style="text-align:center">
+    <h2>Halo, Penjelajah Matematika! 👋</h2>
+    <p>Siap menemukan rahasia pola angka?</p>
+    <div style="font-size:65px">🔢 ➕ 🎯</div>
+    <p>Dalam pembelajaran ini kamu akan belajar menemukan pola bilangan, memahami rumus, dan menyelesaikan tantangan matematika.</p>
+    <button class="btn" onclick="showPage('materi')">
+      Mulai Petualangan!
+    </button>
+  </div>
+
+  <div class="card">
+    <h2>🎯 Tujuan Pembelajaran</h2>
+    <ul>
+      <li>Mengenali pola barisan bilangan.</li>
+      <li>Memahami barisan aritmetika dan geometri.</li>
+      <li>Menentukan suku ke-n.</li>
+      <li>Menghitung jumlah deret bilangan.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- MATERI -->
+<section id="materi" class="page">
+  <div class="card">
+    <h2>📚 1. Apa Itu Barisan Bilangan?</h2>
+    <p>Barisan bilangan adalah susunan bilangan yang memiliki pola atau aturan tertentu.</p>
+    <div class="highlight">
+      Contoh:<br>
+      2, 4, 6, 8, 10, ...
+      <br><br>
+      Polanya adalah bertambah 2.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📘 2. Barisan Aritmetika</h2>
+    <p>Barisan aritmetika adalah barisan yang memiliki selisih tetap.</p>
+    <div class="highlight">
+      Rumus suku ke-n:
+      <h3>Un = a + (n - 1)b</h3>
+      a = suku pertama<br>
+      b = beda<br>
+      n = urutan suku
+    </div>
+    <b>Contoh:</b>
+    <p>3, 6, 9, 12, 15, ...</p>
+    <p>a = 3 dan b = 3</p>
+    <p>U5 = 3 + (5 - 1) × 3</p>
+    <p><b>U5 = 15</b></p>
+  </div>
+
+  <div class="card">
+    <h2>📗 3. Barisan Geometri</h2>
+    <p>Barisan geometri adalah barisan yang memiliki rasio tetap.</p>
+    <div class="highlight">
+      Rumus suku ke-n:
+      <h3>Un = a × r<sup>(n-1)</sup></h3>
+      a = suku pertama<br>
+      r = rasio<br>
+      n = urutan suku
+    </div>
+    <b>Contoh:</b>
+    <p>2, 4, 8, 16, 32, ...</p>
+    <p>a = 2 dan r = 2</p>
+    <p>U5 = 2 × 2<sup>4</sup></p>
+    <p><b>U5 = 32</b></p>
+  </div>
+
+  <div class="card">
+    <h2>📙 4. Deret Aritmetika</h2>
+    <p>Deret adalah penjumlahan suku-suku dalam suatu barisan.</p>
+    <div class="highlight">
+      Rumus jumlah n suku:
+      <h3>Sn = n/2 (2a + (n-1)b)</h3>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📕 5. Deret Geometri</h2>
+    <div class="highlight">
+      Rumus jumlah n suku (r ≠ 1):
+      <h3>Sn = a(r<sup>n</sup> - 1)/(r - 1)</h3>
+    </div>
+  </div>
+</section>
+
+<!-- GAME -->
+<section id="game" class="page">
+  <div class="card">
+    <h2>🎮 Game Tebak Pola!</h2>
+    <p>Temukan angka yang tepat untuk melanjutkan pola berikut.</p>
+
+    <h2 id="pattern" style="text-align:center;font-size:30px">
+      2, 4, 6, 8, ...
+    </h2>
+
+    <input type="number" id="answer" placeholder="Masukkan jawabanmu">
+
+    <button class="btn" onclick="checkGame()">
+      Periksa Jawaban
+    </button>
+
+    <p id="feedback"></p>
+    <button class="btn" onclick="nextGame()">
+      Soal Berikutnya ➜
+    </button>
+  </div>
+</section>
+
+<!-- KUIS -->
+<section id="kuis" class="page">
+  <div class="card">
+    <h2>📝 Kuis Matematika</h2>
+    <p>Jawablah pertanyaan berikut dengan benar!</p>
+
+    <h3 id="question"></h3>
+    <div id="options"></div>
+
+    <p id="quizFeedback"></p>
+    <p id="score"></p>
+
+    <button class="btn" onclick="nextQuiz()">
+      Soal Selanjutnya ➜
+    </button>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <p>🌟 Semangat Belajar Matematika!</p>
+  <p>Media Pembelajaran Barisan dan Deret SMP</p>
+</footer>
+
+<script>
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => {
+    p.classList.remove('active');
+  });
+  document.getElementById(id).classList.add('active');
+}
+
+// GAME TEBAK POLA
+const games = [
+  {p:"2, 4, 6, 8, ...", a:10},
+  {p:"3, 6, 9, 12, ...", a:15},
+  {p:"2, 4, 8, 16, ...", a:32},
+  {p:"5, 10, 15, 20, ...", a:25},
+  {p:"1, 3, 5, 7, ...", a:9}
+];
+
+let gameIndex = 0;
+
+function loadGame() {
+  document.getElementById("pattern").innerText =
+    games[gameIndex].p;
+  document.getElementById("answer").value = "";
+  document.getElementById("feedback").innerText = "";
+}
+
+function checkGame() {
+  let answer = Number(document.getElementById("answer").value);
+
+  if(document.getElementById("answer").value === "") {
+    document.getElementById("feedback").innerText =
+      "Masukkan jawaban terlebih dahulu!";
+    return;
+  }
+
+  if(answer === games[gameIndex].a) {
+    document.getElementById("feedback").innerText =
+      "🎉 Hebat! Jawaban kamu benar!";
+    document.getElementById("feedback").style.color = "green";
+  } else {
+    document.getElementById("feedback").innerText =
+      "Belum tepat. Coba perhatikan polanya lagi!";
+    document.getElementById("feedback").style.color = "red";
+  }
+}
+
+function nextGame() {
+  gameIndex = (gameIndex + 1) % games.length;
+  loadGame();
+}
+
+loadGame();
+
+// KUIS INTERAKTIF
+const questions = [
+  {
+    q:"Barisan 2, 4, 6, 8, ... memiliki beda?",
+    o:["1","2","3","4"],
+    a:1
+  },
+  {
+    q:"Suku ke-5 dari 3, 6, 9, 12, ... adalah?",
+    o:["12","15","18","20"],
+    a:1
+  },
+  {
+    q:"Rasio dari 2, 4, 8, 16, ... adalah?",
+    o:["2","3","4","5"],
+    a:0
+  },
+  {
+    q:"Suku pertama barisan 5, 10, 15, 20 adalah?",
+    o:["2","5","10","15"],
+    a:1
+  },
+  {
+    q:"Jumlah 3 suku pertama dari 2, 4, 6 adalah?",
+    o:["10","12","14","16"],
+    a:1
+  }
+];
+
+let quizIndex = 0;
+let scoreValue = 0;
+let answered = false;
+
+function loadQuiz() {
+  answered = false;
+  document.getElementById("quizFeedback").innerText = "";
+  document.getElementById("question").innerText =
+    questions[quizIndex].q;
+
+  let html = "";
+  questions[quizIndex].o.forEach((option,i) => {
+    html += `<button class="option"
+      onclick="checkQuiz(${i})">${option}</button>`;
+  });
+
+  document.getElementById("options").innerHTML = html;
+  document.getElementById("score").innerText =
+    "Skor: " + scoreValue;
+}
+
+function checkQuiz(choice) {
+  if(answered) return;
+  answered = true;
+
+  if(choice === questions[quizIndex].a) {
+    scoreValue += 20;
+    document.getElementById("quizFeedback").innerText =
+      "✅ Benar! Kamu hebat!";
+    document.getElementById("quizFeedback").style.color = "green";
+  } else {
+    document.getElementById("quizFeedback").innerText =
+      "❌ Belum tepat. Jawaban benar: " +
+      questions[quizIndex].o[questions[quizIndex].a];
+    document.getElementById("quizFeedback").style.color = "red";
+  }
+
+  document.getElementById("score").innerText =
+    "Skor: " + scoreValue;
+}
+
+function nextQuiz() {
+  if(!answered) {
+    alert("Jawab soal terlebih dahulu!");
+    return;
+  }
+
+  quizIndex++;
+
+  if(quizIndex >= questions.length) {
+    document.getElementById("question").innerText =
+      "🎉 Kuis Selesai!";
+    document.getElementById("options").innerHTML =
+      "<h2>Skor Akhir: " + scoreValue + "/100</h2>" +
+      "<button class='btn' onclick='restartQuiz()'>Ulangi Kuis</button>";
+    document.getElementById("quizFeedback").innerText =
+      "Terima kasih sudah belajar!";
+    document.getElementById("score").innerText = "";
+    return;
+  }
+
+  loadQuiz();
+}
+
+function restartQuiz() {
+  quizIndex = 0;
+  scoreValue = 0;
+  loadQuiz();
+}
+
+loadQuiz();
+</script>
+
+</body>
+</html>
